@@ -1,0 +1,8 @@
+body{
+	background: linear-gradient(0deg, #444, #000);
+	height: 100vh;
+}
+
+.navbar{
+	border: 4px double black;	
+}
