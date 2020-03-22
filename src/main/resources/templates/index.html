@@ -2,9 +2,10 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 	<head th:replace="common/header :: common-header"></head>
 	<body>
-		
-		<div th:replace="common/navbar:: common-navbar"></div>
-		
-		<div th:replace="common/bodyscript :: common-scripts"></div>
+		<div class="container-fluid">
+			<div th:replace="common/navbar:: common-navbar"></div>
+			<div th:replace="@{'views/' + ${content}} "></div>
+			<div th:replace="common/bodyscript :: common-scripts"></div>
+		</div>
 	</body>
 </html>

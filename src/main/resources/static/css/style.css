@@ -6,3 +6,7 @@ body{
 .navbar{
 	border: 4px double black;	
 }
+
+h1{
+	color: yellow;
+}
