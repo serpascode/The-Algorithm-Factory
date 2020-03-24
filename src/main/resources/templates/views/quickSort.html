@@ -1,8 +1,26 @@
-<div xmlns:th="http://www.w3.org/1999/xhtml"  th:fragment="quickSort" >
-	<div class="row">
-		<div class="col">
-			<h1 class="header">This is the Quick Sort Page</h1>
+<div xmlns:th="http://www.w3.org/1999/xhtml"  th:fragment="quickSort">
+	<div class="px-2">	
+		<div class="row">
+			<div class="mx-auto mt-2 px-5 title">
+				<h1>The Quick Sort Algorithm</h1>
+			</div>
+		</div>
+		<div class="row mt-1" style="flex-wrap: wrap-reverse;">
+			<div class="col-lg mx-2 my-2 column-1 bg-light">
+			<textarea disabled>
+			Code for the Divide and Conquer Quick Sort
+			</textarea>
+			</div>
+			<div class="col-lg mx-2 my-2 column-2 bg-light">
+			<canvas id="quickSortCanvas" style="">Canvas Not Supported</canvas>
+			</div>
 			
 		</div>
 	</div>
 </div>
+<script src="/js/Sorter.js" type="text/javascript"></script>
+<script>
+	//Canvas Id, divident of width, and time delay)
+	sorter = new Sorter("quickSortCanvas", 5, 700);
+	sorter.quickSort();
+</script>

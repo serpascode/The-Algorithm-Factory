@@ -90,6 +90,10 @@ Sorter.prototype.bubbleSort = function(){
 	}
 }
 
+//Quick Sort
+Sorter.protoype.quickSort = function(){
+	
 
+}
 
 
