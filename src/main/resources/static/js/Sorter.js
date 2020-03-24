@@ -77,18 +77,15 @@ Sorter.prototype.bubbleSort = function(){
 	this.draw([...this.values], 0);
 	for(var i= this.values.length; --i>=0;)
 	{	
-		
 		for(var j=0; j<i; ++j)
-		{
-			
+		{	
 			if(this.values[j]>this.values[j+1])
 			{
 				var  temp = this.values[j];
 				this.values[j] = this.values[j+1];
-				this.values[j+1] = temp;
-			
+				this.values[j+1] = temp;	
 			}
-		}	this.draw([...this.values], this.values.length-i+1);
+		}	this.draw([...this.values], this.values.length-i+2);
 		
 	}
 }

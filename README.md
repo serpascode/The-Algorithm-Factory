@@ -3,7 +3,7 @@ A Website Created with Spring Boot to Visualize Sorting Algorithms.
 
 This web app that incorporates Thymeleaf
 https://www.thymeleaf.org/
-as a templating engine along.
+as a templating engine.
 
 It its a casestudy of a the Factory Design Pattern and will use a series of 
 Sorting Algorithms implemented in Java.
