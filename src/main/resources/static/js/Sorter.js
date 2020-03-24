@@ -25,7 +25,7 @@ var Sorter = function(canvasId, pixelSpace, timeDelay){
 Sorter.prototype.getValues = function(numberOfElements){
 	//Produce Random Array of Numbers
 	for(var a=[], i=0; i<this.numberOfElements; i++){
-		a[i] =  i*(this.height/this.numberOfElements);
+		a[i] = i*(this.height/this.numberOfElements);
 	}
 	return this.shuffle(a);
 }
@@ -54,11 +54,13 @@ Sorter.prototype.draw = function(array, t){
 	}}, t*this.timeDelay);
 }
 
-//***********************
+//***************************
 // Sorting Specific Functions
-//***********************
+//***************************
+
 //Insertion Sort (For loop Implementation)
 Sorter.prototype.insertionSort = function(){
+	this.draw([...this.values], 0);
 	var i, j, key;
 	for(i = 0; i<this.values.length; i++)
 	{
@@ -67,6 +69,27 @@ Sorter.prototype.insertionSort = function(){
 			this.values[j+1] = this.values[j];
 		this.values[j+1] = key;
 		this.draw([...this.values], i+1);
+	}
+}
+
+//Bubble Sort
+Sorter.prototype.bubbleSort = function(){
+	this.draw([...this.values], 0);
+	for(var i= this.values.length; --i>=0;)
+	{	
+		
+		for(var j=0; j<i; ++j)
+		{
+			
+			if(this.values[j]>this.values[j+1])
+			{
+				var  temp = this.values[j];
+				this.values[j] = this.values[j+1];
+				this.values[j+1] = temp;
+			
+			}
+		}	this.draw([...this.values], this.values.length-i+1);
+		
 	}
 }
 
