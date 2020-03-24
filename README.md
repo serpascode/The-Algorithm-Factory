@@ -8,6 +8,9 @@ as a templating engine.
 It its a casestudy of a the Factory Design Pattern and will use a series of 
 Sorting Algorithms implemented in Java.
 
+Another implemenation of sorting animations (for comparison)
+https://www.toptal.com/developers/sorting-algorithms
+
 Using Bootstrap4, along with HTML5 & css3 It will be a visual representation of sorting algorithms 
 and will allow the user to cycle through the offered Algorithms. 
 
