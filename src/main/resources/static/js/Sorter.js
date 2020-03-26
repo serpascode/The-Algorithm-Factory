@@ -58,12 +58,10 @@ Sorter.prototype.draw = function(array, t){
 //Then display all Steps after algorithm completes
 var displayQueue=[];
 //
-Sorter.prototype.drawQueue = function(array, t){
-	setTimeout(()=>{
-		for(let i = 0; i<displayQueue.length; i++){
-			this.draw(displayQueue[i], i);
-		}
-	}, t);
+Sorter.prototype.drawQueue = function(){
+	for(let i = 0; i<displayQueue.length; i++){
+		this.draw(displayQueue[i], i);
+	}
 }
 
 //***************************
@@ -72,8 +70,7 @@ Sorter.prototype.drawQueue = function(array, t){
 
 //Insertion Sort
 Sorter.prototype.insertionSort = function(){
-	this.draw([...this.values], 0);
-	console.log("og"+this.values.toString());
+	this.draw(this.values, 0);
 	var i, j, key;
 	for(j = 0; j<this.values.length; j++)
 	{
@@ -83,19 +80,19 @@ Sorter.prototype.insertionSort = function(){
 		{
 			this.values[i+1] = this.values[i];
 			this.values[i] = key; 
-			//Extra swap with key, allows the visual traversal of it to be displayed
+			//Extra swap with key, allows the visual traversal of key to be displayed
 			i--;
 			displayQueue.push([...this.values]);
 		}
 		this.values[i+1] = key;
 	}
 	displayQueue.push([...this.values]);
-	this.drawQueue(displayQueue, this.timeDelay);
+	this.drawQueue();
 }
 
 //Bubble Sort
 Sorter.prototype.bubbleSort = function(){
-	this.draw([...this.values], 0);
+	this.draw(this.values, 0);
 	for(var i= this.values.length; i>=0; i--)
 	{	
 		for(var j=0; j<i; j++)
@@ -109,11 +106,43 @@ Sorter.prototype.bubbleSort = function(){
 			}
 		}	
 	}
-	this.drawQueue(displayQueue, this.timeDelay);
+	this.drawQueue();
 }
 
 //Quick Sort
-//Sorter.protoype.quickSort = function(){
-//	
-//console.log("quick sort method");
-//}
+Sorter.prototype.quickSort = function(){
+	this.draw(this.values, 0);
+	Sorter.prototype.recursiveQuickSort = function(low, high){
+		var lowIndex = low;
+		var highIndex = high;
+		var mid;
+		
+		if(high>low){
+			mid = this.values[Math.floor((low+high)/2)];
+			
+			while(lowIndex<=highIndex){
+				while((lowIndex<high)&&(this.values[lowIndex]<mid))
+					lowIndex++;
+				
+				while((highIndex>low)&&(this.values[highIndex]>mid))
+					highIndex--;
+				
+				if(lowIndex<=highIndex){
+					var temp = this.values[highIndex];
+					this.values[highIndex] = this.values[lowIndex];
+					this.values[lowIndex] = temp;
+					
+					displayQueue.push([...this.values]);
+					lowIndex++;
+					highIndex--;
+				}
+			}
+			if(low<highIndex)
+				this.recursiveQuickSort(low, highIndex);
+			if(lowIndex<high)
+				this.recursiveQuickSort(lowIndex, high);
+		}
+	}
+	this.recursiveQuickSort(0, this.values.length-1);
+	this.drawQueue();
+}
