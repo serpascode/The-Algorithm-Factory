@@ -8,12 +8,11 @@
 		<div class="row mt-1" style="flex-wrap: wrap-reverse;">
 			<div class="col-lg mx-2 my-2 column-1 bg-light">
 			<textarea disabled>
-				for(i= a.length; --i>=0;)
+				for(i= a.length; i>=0; i--)
 				{	for(j=0; j<i; j++)
 					{
 						if(a[j]>a[j+1])
 						swap(j, j+1);
-						
 					}
 				}
 			</textarea>
@@ -28,6 +27,6 @@
 <script src="/js/Sorter.js" type="text/javascript"></script>
 <script>
 	//Canvas Id, divident of width, and time delay)
-	sorter = new Sorter("bubbleSortCanvas", 5, 700);
+	sorter = new Sorter("bubbleSortCanvas", 5, 100);
 	sorter.bubbleSort();
 </script>
