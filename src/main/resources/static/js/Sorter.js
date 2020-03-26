@@ -146,3 +146,57 @@ Sorter.prototype.quickSort = function(){
 	this.recursiveQuickSort(0, this.values.length-1);
 	this.drawQueue();
 }
+
+//Merge Sort
+Sorter.prototype.mergeSort = function(){
+	this.draw(this.values, 0);
+	console.log(this.values.toString()+"sss");
+	Sorter.prototype.recursiveMergeSort = function(low, high){
+		if(low<high){
+			var mid = Math.floor((low+high)/2);
+			this.recursiveMergeSort(low,mid);
+			this.recursiveMergeSort(mid+1,high);
+			this.merge(low, mid, high);
+		}
+	}
+	Sorter.prototype.merge = function(low, mid, high){
+		var indexOne = mid - low +1;
+		var indexTwo = high - mid;
+		var leftArray = [];
+		var rightArray = [];
+		var i,j,k;
+		for(i = 0; i<indexOne; i++)
+			leftArray.push(this.values[low+i]);
+		for(j = 0; j<indexTwo; j++)
+			rightArray.push(this.values[mid+j+1]);
+		//**************
+		i=0; j=0; k=low;//Reinitialize Variables to begin merge sequence
+		
+		while(i<indexOne && j<indexTwo){
+			if(leftArray[i]<=rightArray[j]){
+				this.values[k] = leftArray[i];
+				i++;
+				displayQueue.push([...this.values]);
+			}else{
+				this.values[k] = rightArray[j];
+				j++;
+				displayQueue.push([...this.values]);
+			}
+			k++;
+		}
+		while(i<indexOne){
+			this.values[k] = leftArray[i];
+			i++;
+			k++;
+			displayQueue.push([...this.values]);
+		}
+		while(j<indexTwo){
+			this.values[k] = rightArray[j];
+			j++;
+			k++;
+			displayQueue.push([...this.values]);
+		}
+	}
+	this.recursiveMergeSort(0, this.values.length-1);
+	this.drawQueue();
+}
