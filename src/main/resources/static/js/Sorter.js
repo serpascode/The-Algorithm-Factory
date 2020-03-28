@@ -30,6 +30,15 @@ Sorter.prototype.getValues = function(numberOfElements){
 	return this.shuffle(a);
 }
 
+//Fill an Array with Values based of the height of canvas
+Sorter.prototype.getPositiveValues = function(numberOfElements){
+	//Produce Random Array of Numbers
+	for(var a=[], i=0; i<this.numberOfElements; i++){
+		a[i] = Math.floor((this.height/this.numberOfElements)-i);
+	}
+	return a;
+}
+
 //Simple swap to randomize order of values in array
 Sorter.prototype.shuffle = function(array){
 	for(var i=0; i<array.length; i++){
