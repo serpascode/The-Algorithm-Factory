@@ -1,5 +1,9 @@
 # The-Algorithm-Factory
-A Website Created with Spring Boot to Visualize Sorting Algorithms.
+A Website Written by Luis Serpas
+with the help of Spring and Thymeleaf.
+It visualizes a set of Sorting Algorithms.
+
+
 
 This web app that incorporates Thymeleaf
 https://www.thymeleaf.org/
