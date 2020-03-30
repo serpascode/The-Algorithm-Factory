@@ -3,7 +3,8 @@ A Website Written by Luis Serpas
 with the help of Spring and Thymeleaf.
 It visualizes a set of Sorting Algorithms.
 
-
+Using a set of Thymeleaf 'fragments' as the front 
+for each of the Sorting Sequences. 
 
 This web app that incorporates Thymeleaf
 https://www.thymeleaf.org/
