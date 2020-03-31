@@ -3,17 +3,15 @@ A Website Written by Luis Serpas
 with the help of Spring and Thymeleaf.
 It visualizes a set of Sorting Algorithms.
 
-Using a set of Thymeleaf 'fragments' as the front 
+Using a set of Thymeleaf 'fragments' as the front end
 for each of the Sorting Sequences. 
 
 This web app that incorporates Thymeleaf
 https://www.thymeleaf.org/
 as a templating engine.
 
-It its a casestudy of a the Factory Design Pattern and will use a series of 
-Sorting Algorithms implemented in Java.
-
-Another implemenation of sorting animations (for comparison)
+Here is an Example of 
+Another implemenation of sorting animations. I used this for visual comparison
 https://www.toptal.com/developers/sorting-algorithms
 
 Using Bootstrap4, along with HTML5 & css3 It will be a visual representation of sorting algorithms 
