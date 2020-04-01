@@ -19,8 +19,13 @@ and will allow the user to cycle through the offered Algorithms.
 
 ![The Algorithm Factory Insertion Sort Demo](the_algorithm_factory_demo.gif)
 
-Although Javascript is synchronous the use of setTimeout() within for loop
-did not work as intended. This is because the setTimeout() function is in fact asynchronous.
+In order to animate the sorting sequences. I use a javascript object called Sorter 
+that contains all the necessary methods to access the html canvas elements.
+Each instance of the sorter 'class' is created within the html <script> element.
+
+Each Sorting Algorithm is implemened as a seperate method. 
+
+A tricky part in animating the algorithms was figuring out where to place the setTimeout() function
 
 https://www.freecodecamp.org/news/thrown-for-a-loop-understanding-for-loops-and-timeouts-in-javascript-558d8255d8a4/
 
